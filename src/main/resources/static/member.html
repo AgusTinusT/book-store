@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Store Management</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Book Store Management</h1>
+
+    <nav>
+        <a href="book.html">Manage Books</a> |
+        <a href="member.html">Manage Members</a> |
+        <a href="transaction.html">Manage Transactions</a> |
+        <a href="/logout">Logout</a>
+    </nav>
+
+    <div class="form-section">
+        <h2>Add/ Update Member</h2>
+        <form id="memberForm">
+            <input type = "hidden" id = "memberId"> <label for="memberName">Name:</label>
+            <input type="text" id="memberName" required>
+
+            <label for="memberEmail">Email:</label>
+            <input type="email" id="memberEmail" required>
+
+            <label for="memberAddress">Address:</label>
+            <input type="text" id="memberAddress" required>
+
+            <label for="memberPhoneNumber">Phone:</label>
+            <input type="text" id="memberPhoneNumber" required>
+
+            <button type="submit" id="submitBtn">Add Member</button>
+            <button type="button" id="cancelUpdateBtn" style="display: none">Cancel Update</button>
+        </form>
+    </div>
+    <div class="member-list-section">
+        <h2>Registered Member</h2>
+        <table id="memberTable">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="js/member.js"></script>
+</body>
+</html>

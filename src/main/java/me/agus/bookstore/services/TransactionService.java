@@ -17,11 +17,17 @@ import java.util.Optional;
 
 @Service
 public class TransactionService {
-    private BookRepository bookRepository;
+    private final BookRepository bookRepository;
 
-    private MemberRepository memberRepository;
+    private final MemberRepository memberRepository;
 
-    private TransactionRepository transactionRepository;
+    private final TransactionRepository transactionRepository;
+
+    public TransactionService(BookRepository bookRepository, MemberRepository memberRepository, TransactionRepository transactionRepository) {
+        this.bookRepository = bookRepository;
+        this.memberRepository = memberRepository;
+        this.transactionRepository = transactionRepository;
+    }
 
     public List<Transaction> getAllTransactions(){
         return transactionRepository.findAll();
@@ -88,7 +94,7 @@ public class TransactionService {
         if (transaction.getTransactionStatus() == TransactionStatus.SELESAI || transaction.getTransactionStatus() == TransactionStatus.BATAL) {
             throw new IllegalArgumentException("Transaksi ini bukan peminjaman dan tidak dapat dikembalikan.");
         }
-        if (transaction.getTransactionType() == TransactionType.PEMINJAMAN){
+        if (transaction.getTransactionType() != TransactionType.PEMINJAMAN){
             throw new IllegalArgumentException("Peminjaman ini sudah selesai atau dibatalkan.");
         }
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Book Store ERP</title>
+    <link rel="stylesheet" href="css/login.css"> </head>
+<body>
+<div class="login-container">
+    <h2>Login to Book Store ERP</h2>
+
+    <div id="login-error" class="error-message" style="display:none;">
+        Invalid username or password.
+    </div>
+    <div id="login-logout" class="success-message" style="display:none;">
+        You have been logged out.
+    </div>
+
+    <form action="/index.html" method="post" class="login-form">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required autofocus>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit" class="login-button">Login</button>
+    </form>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(window.location.search);
+        const errorDiv = document.getElementById('login-error');
+        const logoutDiv = document.getElementById('login-logout');
+
+        if (params.has('error')) {
+            errorDiv.style.display = 'block';
+        }
+        if (params.has('logout')) {
+            logoutDiv.style.display = 'block';
+        }
+    });
+</script>
+</body>
+</html>

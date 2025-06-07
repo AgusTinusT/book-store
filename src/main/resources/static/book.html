@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store Management</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Book Store Management</h1>
+
+    <nav>
+        <a href="book.html">Manage Books</a> |
+        <a href="member.html">Manage Members</a> |
+        <a href="transaction.html">Manage Transactions</a> |
+        <a href="/logout">Logout</a>
+    </nav>
+
+    <div class="form-section">
+        <h2>Add/Update Book</h2>
+        <form id="bookForm">
+            <input type="hidden" id="bookId"> <label for="title">Title:</label>
+            <input type="text" id="title" required>
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" required>
+
+            <label for="isbn">ISBN:</label>
+            <input type="text" id="isbn">
+
+            <label for="publisher">Publisher:</label>
+            <input type="text" id="publisher">
+
+            <label for="publicationYear">Publication Year:</label>
+            <input type="number" id="publicationYear">
+
+            <label for="price">Price:</label>
+            <input type="number" id="price" step="0.01" required>
+
+            <label for="stock">Stock:</label>
+            <input type="number" id="stock" required>
+
+            <button type="submit" id="submitBtn">Add Book</button>
+            <button type="button" id="cancelUpdateBtn" style="display:none;">Cancel Update</button>
+        </form>
+    </div>
+
+    <div class="book-list-section">
+        <h2>Available Books</h2>
+        <table id="bookTable">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>ISBN</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="js/book.js"></script>
+</body>
+</html>

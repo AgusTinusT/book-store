@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Store Management</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Book Store Management</h1>
+
+  <nav>
+    <a href="book.html">Manage Books</a> |
+    <a href="member.html">Manage Members</a> |
+    <a href="transaction.html">Manage Transactions</a> |
+    <a href="/logout">Logout</a>
+  </nav>
+
+  <div class="selection-section form-section">
+    <h2>Select Member & Book</h2>
+    <label for="selectMember">Select Member:</label>
+    <select id="selectMember" required>
+      <option value="">-- Select a Member --</option>
+    </select>
+
+    <label for="selectBook">Select Book:</label>
+    <select id="selectBook" required>
+      <option value="">-- Select a Book --</option>
+    </select>
+  </div>
+
+  <div class="form-section transaction-form-section">
+    <h2>Perform Transaction (Buy / Loan)</h2>
+    <form id="transactionForm">
+      <label for="transactionType">Transaction Type:</label>
+      <select id="transactionType" required>
+        <option value="">-- Choose Type --</option>
+        <option value="PEMBELIAN">Purchase</option>
+        <option value="PEMINJAMAN">Loan</option>
+      </select>
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" min="1" value="1" required>
+
+      <label for="dueDate" id="dueDateLabel" style="display:none;">Due Date:</label>
+      <input type="date" id="dueDate" style="display:none;">
+
+      <button type="submit" id="submitTransactionBtn">Submit Transaction</button>
+    </form>
+  </div>
+
+  <div class="form-section return-form-section">
+    <h2>Process Return</h2>
+    <form id="returnForm">
+      <label for="returnTransactionId">Transaction ID (Loan):</label>
+      <input type="number" id="returnTransactionId" min="1" required> <label for="returnDate">Return Date:</label>
+      <input type="date" id="returnDate" required>
+
+      <button type="submit" id="submitReturnBtn">Process Return</button>
+    </form>
+  </div>
+
+  <div class="list-section">
+    <h2>Transaction History</h2>
+    <button id="refreshTransactionsBtn">Refresh List</button>
+    <table id="transactionTable">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Type</th>
+        <th>Member</th>
+        <th>Book</th>
+        <th>Qty</th>
+        <th>Amount</th>
+        <th>Due Date</th>
+        <th>Return Date</th>
+        <th>Status</th>
+      </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="js/transaction.js"></script>
+</body>
+</html>

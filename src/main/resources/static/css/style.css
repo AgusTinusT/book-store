@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #0056b3;
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+nav a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+nav a.active {
+    background-color: #0056b3;
+    color: white;
+    cursor: default;
+}
+
+nav span {
+    color: #6c757d;
+    margin: 0 5px;
+}
+
+.form-section, .book-list-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+form button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+}
+
+form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+form button[type="button"] {
+    background-color: #6c757d;
+    color: white;
+}
+form button[type="button"]:hover {
+    background-color: #5a6268;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #007bff;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.action-buttons button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.action-buttons .edit-btn {
+    background-color: #ffc107;
+    color: #333;
+}
+.action-buttons .edit-btn:hover {
+    background-color: #e0a800;
+}
+
+.action-buttons .delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+.action-buttons .delete-btn:hover {
+    background-color: #c82333;
+}

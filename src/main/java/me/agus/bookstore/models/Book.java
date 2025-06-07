@@ -7,17 +7,28 @@ import lombok.*;
 @Entity
 @Table(name = "books")
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
 @EqualsAndHashCode(callSuper = true)
 public class Book extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long  Id;
+    private Long Id;
     @Column(nullable = false, length = 255)
     private String title;
+
+    public Book(Long id, String title, String author, String isbn, String publisher, Integer publicationYear, Double price, Integer stock) {
+        Id = id;
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+        this.publisher = publisher;
+        this.publicationYear = publicationYear;
+        this.price = price;
+        this.stock = stock;
+    }
+
+    public Book() {
+    }
+
     @Column(nullable = false, length = 255)
     private String author;
     @Column(unique = true, length = 13)
@@ -30,6 +41,8 @@ public class Book extends Auditable {
     private Double price;
     @Column(nullable = false)
     private Integer stock;
+
+
 
     public Long getId() {
         return Id;

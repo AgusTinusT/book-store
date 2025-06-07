@@ -39,7 +39,7 @@ public class Transaction extends Auditable{
     @Column(nullable = false)
     private Integer quantity;
 
-    @Column(nullable = false)
+    @Column()
     private Double totalAmount;
 
     @Column(name = "due_date")
